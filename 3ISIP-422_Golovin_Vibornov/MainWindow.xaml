@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_3ISIP_422_Golovin_Vibornov"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="430" Width="324" Closing="Window_Closing">
+    <Grid Margin="0,0,0,4">
+        <TextBox x:Name="X" DataObject.Pasting="TextBoxPasting" ToolTip="Введите значение x!" HorizontalAlignment="Left" Margin="99,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Height="24" PreviewTextInput="PreviewTextInputCheck"/>
+        <TextBox x:Name="Y" DataObject.Pasting="TextBoxPasting" ToolTip="Введите значение y!" HorizontalAlignment="Left" Margin="99,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Height="24" PreviewTextInput="PreviewTextInputCheck"/>
+        <Label Content="X" ToolTip="Это просто x." HorizontalAlignment="Left" Margin="69,107,0,0" VerticalAlignment="Top" Height="25" Width="25"/>
+        <Label Content="Y" ToolTip="Это просто y." HorizontalAlignment="Left" Margin="69,136,0,0" VerticalAlignment="Top" Height="25" Width="25"/>
+        <ComboBox x:Name="Functions" ToolTip="Выберите функцию!" HorizontalAlignment="Left" Margin="99,166,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="Answer" ToolTip="Мега ответ!" HorizontalAlignment="Left" Margin="99,223,0,0" IsReadOnly="True" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Height="24"/>
+        <Button Content="Вычислить" ToolTip="Нажмите для вычисления системы уравнений!" HorizontalAlignment="Left" Margin="99,252,0,0" VerticalAlignment="Top" Height="24" Width="125" Click="Button_Click"/>
+        <Button Content="Очистить" ToolTip="Нажмите для мега очистки!" HorizontalAlignment="Left" Margin="99,281,0,0" VerticalAlignment="Top" Height="24" Width="125" Click="Button_Click_1"/>
+        <Image Margin="0,0,0,307" ToolTip="Ваше мега система уравнений!" Source="/Image1.png" Stretch="Fill"/>
     </Grid>
 </Window>
