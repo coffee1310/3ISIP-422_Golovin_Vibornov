@@ -105,7 +105,7 @@ namespace _3ISIP_422_Golovin_Vibornov
 
             string newText = currentText.Insert(textBox.SelectionStart, e.Text);
 
-            Regex regex = new Regex("[^0-9.-]+");
+            Regex regex = new Regex("[^0-9,-]+");
             if (regex.IsMatch(e.Text))
             {
                 e.Handled = true; 
@@ -121,9 +121,9 @@ namespace _3ISIP_422_Golovin_Vibornov
                 }
             }
 
-            if (e.Text == ".")
+            if (e.Text == ",")
             {
-                if (currentText.Contains(".") || textBox.SelectionStart == 0)
+                if (currentText.Contains(",") || textBox.SelectionStart == 0)
                 {
                     e.Handled = true; 
                     return;
@@ -143,7 +143,7 @@ namespace _3ISIP_422_Golovin_Vibornov
             {
                 string pasteText = e.DataObject.GetData(typeof(string)) as string;
 
-                Regex regex = new Regex("[^0-9.-]+");
+                Regex regex = new Regex("[^0-9,-]+");
                 if (regex.IsMatch(pasteText))
                 {
                     e.CancelCommand();
@@ -159,9 +159,9 @@ namespace _3ISIP_422_Golovin_Vibornov
                     }
                 }
 
-                if (pasteText.Contains("."))
+                if (pasteText.Contains(","))
                 {
-                    if (currentText.Contains(".") || textBox.SelectionStart == 0)
+                    if (currentText.Contains(",") || textBox.SelectionStart == 0)
                     {
                         e.CancelCommand();
                         return;
